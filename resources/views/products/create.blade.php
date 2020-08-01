@@ -2,7 +2,9 @@
 
 @section('content')
 
-    <h1>商品を登録</h1>
+    
+
+    <h3>商品を登録</h3>
 
     <div class="row">
         <div class="col-6">

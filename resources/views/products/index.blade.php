@@ -16,7 +16,7 @@
                 @foreach ($products as $product)
                 <tr>
                     <td>{!! link_to_route('products.show', $product->id, ['product' => $product->id]) !!}</td>
-                    <td>{{ $product->content }}</td>
+                    <td>{!! link_to_route('products.show', $product->content, ['product' => $product->id]) !!}</td>
                 </tr>
                 @endforeach
             </tbody>
