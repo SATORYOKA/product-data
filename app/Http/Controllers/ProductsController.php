@@ -45,11 +45,13 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'content' => 'required|max:100'
+            'content' => 'required|max:100',
+            'description' => 'required|max:500',
                 ]);
         
         $product = new Product;
         $product->content = $request->content;
+        $product->description = $request->description;
         $product->save();
         
         return redirect('/');
@@ -95,11 +97,13 @@ class ProductsController extends Controller
     public function update(Request $request, $id)
     {
         $request->validate([
-            'content' => 'required|max:100'
+            'content' => 'required|max:100',
+            'description' => 'required|max:500',
             ]);
             
         $product = Product::findOrFail($id);
         $product->content = $request->content;
+        $product->description = $request->description;
         $product->save();
         
         return redirect('/');

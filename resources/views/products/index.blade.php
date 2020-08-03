@@ -10,6 +10,7 @@
                 <tr>
                     <th>no</th>
                     <th>商品名</th>
+                    <th>説明</th>
                 </tr>
             </thead>
             <tbody>
@@ -17,6 +18,7 @@
                 <tr>
                     <td>{!! link_to_route('products.show', $product->id, ['product' => $product->id]) !!}</td>
                     <td>{!! link_to_route('products.show', $product->content, ['product' => $product->id]) !!}</td>
+                    <td>{{ $product->description }}</td>
                 </tr>
                 @endforeach
             </tbody>

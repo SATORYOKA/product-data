@@ -13,6 +13,10 @@
             <th>商品名</th>
             <td>{{ $product->content }}</td>
         </tr>
+         <tr>
+            <th>説明</th>
+            <td>{{ $product->description }}</td>
+        </tr>
     </table>
     
    {{-- 編集ページへのリンク --}}
