@@ -52,6 +52,7 @@ class ProductsController extends Controller
         $product = new Product;
         $product->content = $request->content;
         $product->description = $request->description;
+        $product->price = $request->price;
         $product->save();
         
         return redirect('/');
@@ -104,6 +105,7 @@ class ProductsController extends Controller
         $product = Product::findOrFail($id);
         $product->content = $request->content;
         $product->description = $request->description;
+        $product->price = $request->price;
         $product->save();
         
         return redirect('/');

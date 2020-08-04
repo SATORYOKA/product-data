@@ -19,6 +19,11 @@
                     {!! Form::label('description', '説明：') !!}
                     {!! Form::text('description', null, ['class' => 'form-control']) !!}
                 </div>
+                
+                <div class="form-group">
+                    {!! Form::label('price', '価格：') !!}
+                    {!! Form::text('price', null, ['class' => 'form-control']) !!}
+                </div>
 
                 {!! Form::submit('更新', ['class' => 'btn btn-primary']) !!}
 

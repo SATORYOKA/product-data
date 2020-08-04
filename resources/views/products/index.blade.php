@@ -11,6 +11,7 @@
                     <th>no</th>
                     <th>商品名</th>
                     <th>説明</th>
+                    <th>価格</th>
                 </tr>
             </thead>
             <tbody>
@@ -19,6 +20,7 @@
                     <td>{!! link_to_route('products.show', $product->id, ['product' => $product->id]) !!}</td>
                     <td>{!! link_to_route('products.show', $product->content, ['product' => $product->id]) !!}</td>
                     <td>{{ $product->description }}</td>
+                    <td>{{ $product->price }}</td>
                 </tr>
                 @endforeach
             </tbody>

@@ -17,6 +17,10 @@
             <th>説明</th>
             <td>{{ $product->description }}</td>
         </tr>
+         <tr>
+            <th>価格</th>
+            <td>{{ $product->price }}</td>
+        </tr>
     </table>
     
    {{-- 編集ページへのリンク --}}
