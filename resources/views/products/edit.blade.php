@@ -8,8 +8,13 @@
 
     <div class="row">
         <div class="col-6">
-            {!! Form::model($product, ['route' => ['products.update', $product->id], 'method' => 'put']) !!}
-
+            {!! Form::model($product, ['route' => ['products.update', $product->id], 'method' => 'put', 'image_file_name'=>true]) !!}
+                
+                <div class="form-group">
+                    {!! Form::label('image_file_name', '画像:') !!}
+                    {!! Form::file('image_file_name') !!}
+                </div>
+                
                 <div class="form-group">
                     {!! Form::label('content', '商品:') !!}
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}

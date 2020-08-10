@@ -6,8 +6,13 @@
 
     <div class="row">
         <div class="col-6">
-            {!! Form::model($product, ['route' => 'products.store']) !!}
-
+            {!! Form::model($product, ['route' => ['products.store'], 'image_file_name'=>true]) !!}
+                
+                <div class="form-group">
+                    {!! Form::label('image_file_name', '画像:') !!}
+                    {!! Form::file('image_file_name') !!}
+                </div>
+                
                 <div class="form-group">
                     {!! Form::label('content', '商品名:') !!}
                     {!! Form::text('content', null, ['class' => 'form-control']) !!}

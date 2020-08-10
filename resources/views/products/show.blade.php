@@ -6,8 +6,8 @@
 
     <table class="table">
         <tr>
-            <th>no</th>
-            <td>{{ $product->id }}</td>
+            <th>画像</th>
+            <td>{{ $product->image_file_name }}</td>
         </tr>
         <tr>
             <th>商品名</th>
@@ -23,12 +23,23 @@
         </tr>
     </table>
     
-   {{-- 編集ページへのリンク --}}
-    {!! link_to_route('products.edit', '編集', ['product' => $product->id], ['class' => 'btn btn-light']) !!}
+    <div class='container'>
+        <div class="row">
+            <div class="col-2">
+                {{-- 編集ページへのリンク --}}
+                {!! link_to_route('products.edit', '編集', ['product' => $product->id], ['class' => 'btn btn-outline-secondary btn-block']) !!}
+            </div>
+            　
+            <div class="col-2">
+                {{-- 削除フォーム --}}
+                {!! Form::model($product, ['route' => ['products.destroy', $product->id], 'method' => 'delete']) !!}
+                {!! Form::submit('削除', ['class' => 'btn btn-outline-danger btn-block']) !!}
+                {!! Form::close() !!}
+            </div>
+        </div>
+        
+    </div>
+       
 
-    {{-- 削除フォーム --}}
-    {!! Form::model($product, ['route' => ['products.destroy', $product->id], 'method' => 'delete']) !!}
-        {!! Form::submit('削除', ['class' => 'btn btn-danger']) !!}
-    {!! Form::close() !!}
 
 @endsection
